@@ -28,12 +28,6 @@ function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-
-
-// Event listener for the cart image click
-const cartImage = document.getElementById('cart-image');
-cartImage.addEventListener('click', showCart);
-
 // Event listener for the "Add to cart" buttons
 const addToCartButtons = document.getElementsByClassName('add-to-cart-button');
 for (let i = 0; i < addToCartButtons.length; i++) {
@@ -54,9 +48,8 @@ function clearCart() {
 // Event listener for the cart preview image click
 
 document.addEventListener("DOMContentLoaded", function() {
-    const cartPreviewImage = document.getElementById("cart-preview");
+    const cartPreviewImage = document.getElementById("cart-image");
     cartPreviewImage.addEventListener('click', function() {
-
         const cartItems = document.getElementById('cart-items');
 
         // Check if 'cart-items' element exists
@@ -74,7 +67,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 cartItems.appendChild(cartItem);
             });
         }
-        console.log("Image has been clicked");
     });
-
-})
+});
